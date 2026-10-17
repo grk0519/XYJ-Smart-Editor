@@ -1,0 +1,6 @@
+{% if session.get('upload_id') %}
+  <form class="session-controls" action="{{ url_for('clear_session') }}" method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <button type="submit">Clear session and delete files</button>
+  </form>
+{% endif %}

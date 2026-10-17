@@ -1,0 +1,100 @@
+<store>
+    <name>Tech Gadgets Store</name>
+    <location>1234 Tech Lane, Silicon Valley, CA</location>
+    <contact>
+        <phone>+1-800-123-4567</phone>
+        <email>support@example.sample.cat</email>
+    </contact>
+    <products>
+        <product>
+            <id>P001</id>
+            <name>Wireless Mouse</name>
+            <category>Accessories</category>
+            <price currency="USD">29.99</price>
+            <inStock>true</inStock>
+            <ratings>
+                <average>4.5</average>
+                <totalReviews>120</totalReviews>
+            </ratings>
+            <details>
+                <color>Black</color>
+                <dimensions>
+                    <length>10cm</length>
+                    <width>5cm</width>
+                    <height>2cm</height>
+                </dimensions>
+                <weight>200g</weight>
+                <features>
+                    <feature>Wireless connection</feature>
+                    <feature>Ergonomic design</feature>
+                    <feature>Long-lasting battery</feature>
+                </features>
+            </details>
+            <variants>
+                <variant>
+                    <color>Black</color>
+                    <price>29.99</price>
+                </variant>
+                <variant>
+                    <color>White</color>
+                    <price>32.99</price>
+                </variant>
+            </variants>
+            <shipping>
+                <standard>
+                    <cost>5.99</cost>
+                    <deliveryTime>5-7 business days</deliveryTime>
+                </standard>
+                <express>
+                    <cost>12.99</cost>
+                    <deliveryTime>2-3 business days</deliveryTime>
+                </express>
+            </shipping>
+        </product>
+        <product>
+            <id>P002</id>
+            <name>Laptop Stand</name>
+            <category>Accessories</category>
+            <price currency="USD">49.99</price>
+            <inStock>true</inStock>
+            <ratings>
+                <average>4.7</average>
+                <totalReviews>75</totalReviews>
+            </ratings>
+            <details>
+                <material>Aluminum</material>
+                <dimensions>
+                    <length>30cm</length>
+                    <width>20cm</width>
+                    <height>10cm</height>
+                </dimensions>
+                <weight>500g</weight>
+                <features>
+                    <feature>Adjustable height</feature>
+                    <feature>Stable and durable</feature>
+                    <feature>Cooling design</feature>
+                </features>
+            </details>
+            <variants>
+                <variant>
+                    <color>Silver</color>
+                    <price>49.99</price>
+                </variant>
+                <variant>
+                    <color>Black</color>
+                    <price>54.99</price>
+                </variant>
+            </variants>
+            <shipping>
+                <standard>
+                    <cost>7.99</cost>
+                    <deliveryTime>5-7 business days</deliveryTime>
+                </standard>
+                <express>
+                    <cost>15.99</cost>
+                    <deliveryTime>2-3 business days</deliveryTime>
+                </express>
+            </shipping>
+        </product>
+    </products>
+</store>

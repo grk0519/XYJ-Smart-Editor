@@ -1,0 +1,9 @@
+<header class="top-header{% if request.endpoint == 'home' %} top-header-home{% endif %}">
+  <div class="top-header-brand">
+    <h1>XYJ Smart Edit</h1>
+    <p>A local editor for XML, YAML, and JSON files</p>
+  </div>
+  {% if request.endpoint != 'home' %}
+    <a class="header-home-link" href="{{ url_for('home') }}">Home</a>
+  {% endif %}
+</header>

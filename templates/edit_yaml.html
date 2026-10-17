@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>Edit YAML</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .yaml-block {
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: #f3f3f3;
+      border-radius: 6px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  {% include '_site_header.html' %}
+  {% include '_session_controls.html' %}
+  
+  <div class="container">
+    <h2>📝 Edit YAML Key-Value Pairs</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}<div class="flash-messages" role="alert">{% for category, message in messages %}<p class="flash-{{ category }}">{{ message }}</p>{% endfor %}</div>{% endif %}
+    {% endwith %}
+    <form action="{{ url_for('preview') }}" method="POST">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <label for="yaml_source">YAML document</label>
+      <textarea id="yaml_source" name="yaml_source" rows="24" spellcheck="false" required>{{ yaml_source }}</textarea>
+      <button type="submit">Preview</button>
+    </form>
+  </div>
+  <script src="{{ url_for('static', filename='session-cleanup.js') }}"></script>
+</body>
+</html>

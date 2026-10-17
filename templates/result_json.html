@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>JSON Download Ready</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  {% include '_site_header.html' %}
+  {% include '_session_controls.html' %}
+  <main class="container">
+    <div class="success-message">
+      <h2>JSON file generated successfully</h2>
+      <p>Your modified file is ready to download.</p>
+    </div>
+    <div class="button-group">
+      <a href="{{ url_for('download') }}"><button type="button">Download JSON</button></a>
+      <a href="{{ url_for('home') }}"><button type="button">Home</button></a>
+    </div>
+  </main>
+  <script src="{{ url_for('static', filename='session-cleanup.js') }}"></script>
+</body>
+</html>

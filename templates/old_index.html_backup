@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XML Editor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>📄 XML Editor</h1>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+      <input type="file" name="xmlfile" accept=".xml" required>
+      <button type="submit">Upload</button>
+    </form>
+
+    {% if fields %}
+    <form action="/save" method="POST" class="edit-form">
+      <input type="hidden" name="filename" value="{{ filename }}">
+      {% for field in fields %}
+        <label>{{ field.tag }}:</label>
+        <input type="text" name="value{{ loop.index0 }}" value="{{ field.value }}">
+      {% endfor %}
+      <button type="submit">Download Modified XML</button>
+    </form>
+    {% endif %}
+  </div>
+</body>
+</html>

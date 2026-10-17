@@ -1,0 +1,129 @@
+<life>
+    <personalInfo>
+        <name>John Doe</name>
+        <age unit="years">30</age>
+        <location>New York, USA</location>
+        <occupation>Software Developer</occupation>
+        <hobbies>
+            <hobby>Reading</hobby>
+            <hobby>Traveling</hobby>
+            <hobby>Photography</hobby>
+        </hobbies>
+    </personalInfo>
+    <goals>
+        <goal>
+            <id>G001</id>
+            <name>Get Fit</name>
+            <description>Improve physical health and fitness</description>
+            <priority>High</priority>
+            <deadline unit="months">6</deadline>
+            <status>In Progress</status>
+            <progress percentage="40"/>
+        </goal>
+        <goal>
+            <id>G002</id>
+            <name>Learn Spanish</name>
+            <description>Become fluent in Spanish for travel and career opportunities</description>
+            <priority>Medium</priority>
+            <deadline unit="months">12</deadline>
+            <status>Not Started</status>
+            <progress percentage="0"/>
+        </goal>
+        <goal>
+            <id>G003</id>
+            <name>Write a Novel</name>
+            <description>Complete a 300-page novel</description>
+            <priority>Low</priority>
+            <deadline unit="years">2</deadline>
+            <status>In Progress</status>
+            <progress percentage="20"/>
+        </goal>
+    </goals>
+    <health>
+        <exercise>
+            <routine>
+                <activity name="Running" frequency="3 times a week" duration="30 minutes" />
+                <activity name="Strength Training" frequency="2 times a week" duration="45 minutes" />
+            </routine>
+            <diet>
+                <meal name="Breakfast">
+                    <item>Oatmeal with fruit</item>
+                    <item>Green tea</item>
+                </meal>
+                <meal name="Lunch">
+                    <item>Grilled chicken salad</item>
+                    <item>Water</item>
+                </meal>
+                <meal name="Dinner">
+                    <item>Salmon with vegetables</item>
+                    <item>Herbal tea</item>
+                </meal>
+            </diet>
+        </exercise>
+        <mentalWellness>
+            <practice name="Meditation" frequency="Daily" duration="10 minutes" />
+            <practice name="Journaling" frequency="Weekly" duration="15 minutes" />
+            <therapy>Yes</therapy>
+        </mentalWellness>
+    </health>
+    <relationships>
+        <family>
+            <member>
+                <name>Jane Doe</name>
+                <relation>Spouse</relation>
+                <birthday>1992-07-15</birthday>
+                <specialOccasions>
+                    <occasion>Anniversary</occasion>
+                    <occasion>Valentine's Day</occasion>
+                </specialOccasions>
+            </member>
+            <member>
+                <name>Emily Doe</name>
+                <relation>Child</relation>
+                <birthday>2021-02-12</birthday>
+            </member>
+        </family>
+        <friends>
+            <friend>
+                <name>Mark Johnson</name>
+                <knownSince>2010</knownSince>
+                <specialOccasions>
+                    <occasion>Birthday</occasion>
+                    <occasion>Graduation Day</occasion>
+                </specialOccasions>
+            </friend>
+            <friend>
+                <name>Rachel Smith</name>
+                <knownSince>2015</knownSince>
+                <specialOccasions>
+                    <occasion>Birthday</occasion>
+                </specialOccasions>
+            </friend>
+        </friends>
+    </relationships>
+    <personalGrowth>
+        <booksRead>
+            <book>
+                <title>The Power of Habit</title>
+                <author>Charles Duhigg</author>
+                <dateRead>2024-11-10</dateRead>
+            </book>
+            <book>
+                <title>Becoming</title>
+                <author>Michelle Obama</author>
+                <dateRead>2024-08-20</dateRead>
+            </book>
+        </booksRead>
+        <skillsLearned>
+            <skill>Python Programming</skill>
+            <skill>Public Speaking</skill>
+        </skillsLearned>
+        <volunteering>
+            <organization name="Local Animal Shelter">
+                <role>Volunteer</role>
+                <hoursPerWeek>4</hoursPerWeek>
+                <since>2023-05-01</since>
+            </organization>
+        </volunteering>
+    </personalGrowth>
+</life>

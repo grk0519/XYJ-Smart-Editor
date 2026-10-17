@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>Preview XML</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .preview-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .preview-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .button-group form {
+      margin: 0;
+    }
+
+    .button-group button {
+      padding: 10px 20px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button-group button:hover {
+      background-color: #005599;
+    }
+  </style>
+</head>
+<body>
+  {% include '_site_header.html' %}
+  {% include '_session_controls.html' %}
+  <div class="container">
+    <h2>🔍 Preview Updated XML</h2>
+    <ul class="preview-list">
+      {% for item in edited %}
+        <li>
+          <strong>{{ item.tag }}</strong>: "{{ item.text }}"
+          {% for k, v in item.attrib.items() %}
+            [{{ k }}="{{ v }}"]
+          {% endfor %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="button-group">
+      <form action="{{ url_for('result') }}" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        {% for item in edited %}
+          <input type="hidden" name="text_{{ item.index }}" value="{{ item.text }}">
+          {% for key, value in item.attrib.items() %}
+            <input type="hidden" name="attr_{{ item.index }}_{{ loop.index0 }}" value="{{ value }}">
+          {% endfor %}
+        {% endfor %}
+        <button type="submit">Generate XML</button>
+      </form>
+
+      <form action="{{ url_for('edit_again') }}" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        {% for item in edited %}
+          <input type="hidden" name="text_{{ item.index }}" value="{{ item.text }}">
+          {% for key, value in item.attrib.items() %}
+            <input type="hidden" name="attr_{{ item.index }}_{{ loop.index0 }}" value="{{ value }}">
+          {% endfor %}
+        {% endfor %}
+        <button type="submit">Go Back and Edit</button>
+      </form>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='session-cleanup.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>Edit JSON</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  {% include '_site_header.html' %}
+  {% include '_session_controls.html' %}
+  <main class="container json-editor">
+    <h2>Edit JSON</h2>
+    {% if error %}<div class="flash-messages" role="alert"><p>{{ error }}</p></div>{% endif %}
+    <form action="{{ url_for('preview') }}" method="POST">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <label for="json_source">JSON document</label>
+      <textarea id="json_source" name="json_source" rows="28" spellcheck="false" required>{{ json_source }}</textarea>
+      <button type="submit">Preview</button>
+    </form>
+  </main>
+  <script src="{{ url_for('static', filename='session-cleanup.js') }}"></script>
+</body>
+</html>

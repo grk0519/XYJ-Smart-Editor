@@ -1,0 +1,47 @@
+xml editor project folder structure
+xml_editor_project/
+│
+├── app.py
+├── requirements.txt
+├── templates/
+│   └── index.html
+├── static/
+│   └── style.css
+├── uploads/
+│   └── (temporary uploaded XMLs)
+├── downloads/
+│   └── (generated modified XMLs)
+
+to create venv:
+    python -m venv venv
+
+activate venv:
+    venv\Scripts\activate
+to install flask:
+    pip install flask
+
+To freeze the installed packages into a requirements.txt file:
+    pip freeze > requirements.txt
+Tell VS Code to use your virtual environment
+    If it doesn’t auto-detect it:
+    Open the command palette (Ctrl+Shift+P or Cmd+Shift+P)
+    Search for and select “Python: Select Interpreter”
+    Choose the interpreter that says ./venv/bin/python or ./venv/Scripts/python.exe
+run the app:
+    python app.py
+to make the env development 
+    set FLASK_ENV=development
+adding preview packages xml_editor_project/
+├── app.py
+├── requirements.txt
+├── templates/
+│   ├── home.html
+│   ├── edit.html
+│   ├── preview.html      ← NEW!
+│   └── result.html
+├── static/
+│   └── style.css
+├── uploads/
+├── downloads/
+
+
